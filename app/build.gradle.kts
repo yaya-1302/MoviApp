@@ -16,6 +16,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "TMDB_ACCESS_TOKEN", "\"${project.findProperty("TMDB_ACCESS_TOKEN")}\"")
+        buildConfigField("String", "BASE_URL", "\"${project.findProperty("BASE_URL")}\"")
     }
 
     buildTypes {
@@ -36,6 +38,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
